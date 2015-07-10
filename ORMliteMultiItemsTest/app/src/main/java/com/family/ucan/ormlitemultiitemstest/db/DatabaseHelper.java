@@ -3,8 +3,8 @@ package com.family.ucan.ormlitemultiitemstest.db;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.family.ucan.ormlitemultiitemstest.bean.UserInfo;
-import com.family.ucan.ormlitemultiitemstest.bean.UserScore;
+import com.family.ucan.ormlitemultiitemstest.bean.Sentence;
+import com.family.ucan.ormlitemultiitemstest.bean.User;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
@@ -29,8 +29,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
         try{
-            TableUtils.createTable(connectionSource, UserInfo.class);
-            TableUtils.createTable(connectionSource, UserScore.class);
+            TableUtils.createTable(connectionSource, User.class);
+            TableUtils.createTable(connectionSource, Sentence.class);
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -40,8 +40,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource,
                           int i, int i1) {
         try{
-            TableUtils.dropTable(connectionSource, UserInfo.class, true);
-            TableUtils.dropTable(connectionSource, UserScore.class, true);
+            TableUtils.dropTable(connectionSource, User.class, true);
+            TableUtils.dropTable(connectionSource, Sentence.class, true);
+            onCreate(sqLiteDatabase,connectionSource);
         }catch (SQLException e){
             e.printStackTrace();
         }
