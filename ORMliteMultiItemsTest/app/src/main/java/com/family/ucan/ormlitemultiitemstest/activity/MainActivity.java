@@ -1,5 +1,6 @@
 package com.family.ucan.ormlitemultiitemstest.activity;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,12 +9,16 @@ import android.view.MenuItem;
 import com.family.ucan.ormlitemultiitemstest.R;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    private void initArticle(){
+        //initial the articles at here
     }
 
     @Override

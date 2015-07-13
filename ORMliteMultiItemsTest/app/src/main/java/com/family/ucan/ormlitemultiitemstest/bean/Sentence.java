@@ -13,25 +13,36 @@ public class Sentence {
     @DatabaseField(canBeNull = false, foreign = true, columnName = "user")
     private User user;
 
-    public Sentence(){
+    public Sentence() {
 
     }
-    public void setId(int id){
+
+    public void setId(int id) {
         this.id = id;
     }
-    public int getId(){
+
+    public int getId() {
         return this.id;
     }
-    public void setSentence(String sentence){
+
+    public void setSentence(String sentence) {
         this.sentence = sentence;
     }
-    public String getSentence(){
+
+    public String getSentence() {
         return this.sentence;
     }
-    public void setUser(User user){
+
+    public void setUser(User user) {
         this.user = user;
     }
-    public User getUser(){
+
+    public User getUser() {
         return this.user;
+    }
+
+    @Override
+    public String toString() {
+        return "sentence: "+getSentence()+"User: "+getUser().toString();
     }
 }

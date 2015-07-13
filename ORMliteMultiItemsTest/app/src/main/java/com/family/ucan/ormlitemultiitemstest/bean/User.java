@@ -11,19 +11,27 @@ public class User {
     @DatabaseField(columnName = "name")
     private String name;
 
-    public User(){
+    public User() {
     }
 
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
-    public int getId(){
+
+    public int getId() {
         return this.id;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
+    }
+
+    @Override
+    public String toString(){
+        return "name: "+getName();
     }
 }
